@@ -1,0 +1,67 @@
+body {
+  background: #EEE url(../img/subtle-bg.png) repeat top left
+}
+
+
+.divider {
+  *width: 100%;
+  height: 1px;
+  margin: 13px 1px;
+  *margin: -5px 0 5px;
+  overflow: hidden;
+  background-color: #CCC;
+  border-bottom: 1px solid #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #464646;
+}
+
+h2 > a {
+    color: #555;
+}
+
+p {
+    font-size: 14px;
+    line-height: 28px;
+    color: #444;
+}
+
+time {
+    color: #999;
+}
+
+.box {
+    list-style: none;
+}
+
+.box > li {
+    float: left;
+    padding-left: 5px;
+}
+
+.tag_box {
+    margin-top: -20px;
+}
+
+.tag_box > h2 {
+    margin-top: 20px;
+}
+
+#metabox {
+    margin-bottom: 30px;
+}
+
+img {
+    margin-bottom: 18px;
+}
+
+@font-face {  
+    font-family: cc-icons;  
+    src: url(../font/cc-icons.ttf) format("truetype");  
+}
+
+.cc {
+  font-family: cc-icons;
+}
+
