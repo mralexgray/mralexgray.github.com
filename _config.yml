@@ -16,8 +16,8 @@ author :
   email : alex@mrgray.com
   github : mralexgray
   twitter : mralexgray
-  # feedburner : feedname
-
+  feedburner : mralexgray
+  homepage : http://mrgray.com
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt
 # Most places will/should use BASE_PATH to make the urls
@@ -96,10 +96,11 @@ JB :
   # Set 'provider' to the analytics provider you want to use.
   # Set 'provider' to false to turn analytics off globally.
   #
+
   analytics :
     provider : google
     google :
-        tracking_id : 'UA-123-12'
+        tracking_id : 'UA-1086058-7'
     getclicky :
       site_id :
     mixpanel :
@@ -110,8 +111,14 @@ JB :
   # Set 'provider' to the sharing provider you want to use.
   # Set 'provider' to false to turn sharing off globally.
   #
-  sharing :
-    provider : false
+#  sharing :
+#    provider : false
+ sharing :
+    enabled : true
+    provider :
+        twitter : true
+        facebook : true
+        google-plus: true
 
   # Settings for all other include helpers can be defined by creating
   # a hash with key named for the given helper. ex:

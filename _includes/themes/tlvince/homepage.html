@@ -1,0 +1,13 @@
+{% for post in site.posts limit:5 %}
+<article>
+  <header class="page-header">
+    <h2><a href="{{ post.url }}" rel="bookmark" title="Permanent link to {{post.title}}">{{ post.title}}</a></h2>
+    <time>{{ post.date | date: '%B' }} {{ post.date | date: '%e' }}, {{ post.date | date: '%Y' }}</time>
+  </header>
+  <div class="content">
+  {{ post.content }}
+  {% include themes/tlvince/metabox.html %}
+  <div class="divider"></div>
+</article>
+{% endfor %}
+<div class="pagination"><ul><li><a href="/archive.html">Archive</a></li></ul></div>
