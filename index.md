@@ -1,7 +1,8 @@
 ---
-layout: page
+layout: homepage <!-- page -->
 title: that's just something i do.
 tagline: i'm 100% 50/50.
+description: i'm 100% 50/50. <!-- for homepage lyout -->
 ---
 {% include JB/setup %}
 
