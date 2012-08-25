@@ -1,0 +1,3 @@
+[submodule "assets/cache"]
+	path = assets/cache
+	url = git://github.com/viatropos/cached-commons.git
