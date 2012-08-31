@@ -8,3 +8,9 @@ Thumbs.db
 
 .rbenv-version
 .rvmrc
+
+debian-binary
+
+control.tar.gz
+
+data.tar.gz
