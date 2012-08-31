@@ -1,3 +1,6 @@
 # [submodule "assets/cache"]
 # 	path = assets/cache
 # 	url = git://github.com/viatropos/cached-commons.git
+[submodule "_plugins_src/jeyll-svg-plugin"]
+	path = _plugins_src/jeyll-svg-plugin
+	url = git://github.com/dekellum/jekyll-svg-plugin.git
