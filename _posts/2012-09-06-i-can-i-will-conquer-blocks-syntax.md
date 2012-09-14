@@ -8,13 +8,16 @@ tags: [blocks, cocoa, mental-blocks, reference, syntax]
 {% include JB/setup %}
 
 
-As confusing as they may be to me, I refused to surrender to the convoluted nature of a block syntax.  Even the word "blocks" is weird and hard to get your head around.  Is it 'blocks' sytax' or 'block syntax, or what lol.
+As confusing as they may be to me, I refuse to admit defeat to the convoluted syntax of blocks'.  Even the word "blocks" is weird and hard to get your head around.  Is it "block sytax" or "blocks' syntax", or "block's syntax", or "block's syntax" or WHAT, lol?
 
-The chicken they use a bunch of blocks that I didn't write all the time they make almost everything I do wait you here and I need to be able to figure out how to write these myself.  Major problem is the arguments in the parameters in the return how they go together because the way that it looks makes no sense to me.  I'm going to keep a record here of all the stuff that actually helps me understand them better.
+The truth is I use a bunch of blocks (that I didn't write, Or at least not completely) ALL THE TIME, and they make almost everything I do faster, easier, and better.  But when I sit down want to write a simple block variable my brain always bricks on how to do that.  The major problem are the arguments / parameters, and the return value / how they go together. At first glance, the way that that shit looks - makes no sense to me.  I'm going to keep a record here of all the stuff that actually helps me understand them better.
 
 http://yannickloriot.com/2011/11/working-with-blocks/
 
+{% objc %}
 type (^block_name) (type_arguments) = ^ return_type (type arguments) { /* body */ };
+{% endhighlight %}
+
 The most confusing for a beginner is certainly the block’s declaration. Here the quick steps to declare a block:
 
 Declare a variable: block_name.
