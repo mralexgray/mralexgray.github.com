@@ -67,6 +67,13 @@ task :post do
     post.puts "tags: []"
     post.puts "---"
     post.puts "{% include JB/setup %}"
+    post.puts ""
+    post.puts ""
+    post.puts ""
+    post.puts ""
+    post.puts ""
+    post.puts "[\"#{title.gsub(/-/,' ')}\"]({% post_url #{date}-#{slug} %})"
+    post.puts ""
   end
 end # task :post
 
