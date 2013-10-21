@@ -1,5 +1,11 @@
 /*@import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);*/
 
+#avatar {
+transform: rotate(-30deg);
+-ms-transform: rotate(-39deg); /* IE 9 */
+-webkit-transform: rotate(-38deg); /* Safari and Chrome */
+}
+
 th[data-sort]{
   cursor:pointer;
 }
