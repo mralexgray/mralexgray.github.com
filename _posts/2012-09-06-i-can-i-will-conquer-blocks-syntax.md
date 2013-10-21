@@ -36,16 +36,16 @@ Write the block’s body: ^ return_type (type arguments) { /* body */ }.
 Some parts of a block assignment are optionals:
 
 If the block takes no arguments, the argument list can be skipped.
-Example: ^ BOOL { return YES; }.
+Example: ``^ BOOL { return YES; }``.
 You don’t need to specify the return type because it can be inferred by the compiler from the return statement.
-Example: ^ (NSString *s) { /* body */ return YES; }.
-
+Example: ```^ (NSString *s) { /* body */ return YES; }```.
 
 
 http://b2cloud.com.au/how-to-guides/learn-c-blocks-in-20-seconds
 
 I will compare blocks to their C function counterparts, for terms of simplicity and explanation.
 
+```objc
 double MyFunction (int input1, void* input2)
 {
 	return 0;
@@ -66,13 +66,18 @@ int main(int argc, char *argv[])
 
 	return 0;
 }
+```
+
 Repeating the block creation code for the same structured block can be annoying, you can create a typedef for it like so
 
 typedef double (^MyBlock)(int, void*);
 The old block creation code can be replaced using the typedef
 
+```
 MyBlock VariableName = ^ double (int input1, void* input2)
 {
 	return 0;
 };
+```
+
 That is C Blocks in a nutshell, the only other methods to use in conjunction with these is Block_copy and Block_release.

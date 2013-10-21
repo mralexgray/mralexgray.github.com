@@ -48,4 +48,4 @@ Of course, substitute your server name for server. It should ask for your passwo
 
 If that didn't work for you, check your file permissions on both ~/.ssh/* and server:~/.ssh/*. Your private key (id_rsa) should be 0600 (and only be present on your local machine), and everything else should be 0655 or better.
 
-[Password less SSH key exchange]({% post_url 2012-09-15-password-less-ssh-key-exchange %})
+\[Password less SSH key exchange\]({% post_url 2012-09-15-password-less-ssh-key-exchange %})
