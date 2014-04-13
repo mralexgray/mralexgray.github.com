@@ -1,0 +1,23 @@
+{% if post %}
+  {% assign context = post %}
+{% else %}
+  {% assign context = page %}
+{% endif %}
+
+    <div id="metabox">
+      {% unless context.tags == empty %}
+      <span class="pull-left">
+        <i class="icon-tags icon-large"></i>
+        <ul class="tag_box box">
+          {% assign tags_list = context.tags %}
+          {% include JB/tags_list %}
+        </ul>
+      </span>
+      {% endunless %}
+
+      <ul class="pull-right box">
+        {% assign sharing_context = context %}
+        {% assign sharing_message_prefix = "Photo " %}
+        {% include JB/sharing %}
+      </ul>
+    </div>

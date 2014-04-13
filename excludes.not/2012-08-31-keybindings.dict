@@ -1,0 +1,103 @@
+/*
+---
+layout: post
+category : lessons
+tags : [intro, beginner, jekyll, tutorial]
+---
+{% include JB/setup %}
+*/
+
+
+/* ~/Library/KeyBindings/DefaultKeyBinding.Dict
+
+^ :  ⌃ control	$ :   ⇧ shift		~ :  ⌥ option (Alt)		@ :  ⌘ Command (Apple)			# : Numeric Keypad			**  Key Modifiers 			**
+
+Up Arrow:     	\UF700      Backspace:    	\U0008      F1:           	\UF704											**	Non-Printable Key Codes **
+Down Arrow:   	\UF701     	Tab:          	\U0009      F2:           	\UF705
+Left Arrow:   	\UF702      Backtab ( ⇧tab)	\U0019		F3:           	\UF706
+Right Arrow:  	\UF703		Enter:       	\U000A		Help:         	\UF746
+							Escape:       	\U001B		Break:        	\UF732
+Page Up:      	\UF72C		For.Delete:   	\UF728      Print Screen: 	\UF72E
+Page Down:    	\UF72D		Back.`Delete	\U007F		Menu:        	\UF735
+Home:         	\UF729		Insert:       	\UF727		Pause:        	\UF730
+End:          	\UF72B      Scroll Lock:  	\UF72F		SysReq:       	\UF731
+
+
+NOTE: typically the Windows 'Insert' key is mapped to what Macs call 'Help'.
+Regular Mac keyboards don't even have the Insert key, but provide 'Fn' instead, which is completely different.  */
+
+{
+	"^$K" = (
+	    "selectLine:",
+	    "cut:"
+	);
+
+	"^$D" = (
+	    "selectLine:",
+	    "copy:",
+	    "moveToEndOfLine:",
+	    "insertNewline:",
+	    "paste:",
+	    "deleteBackward:"
+	);
+
+	//  rebind home/end to move to the beginning/end of line
+	/* home */
+	"\UF729"  = "moveToBeginningOfLine:";
+	"$\UF729" = "moveToBeginningOfLineAndModifySelection:";
+
+	/* end */
+	"\UF72B"  = "moveToEndOfLine:";
+	"$\UF72B" = "moveToEndOfLineAndModifySelection:";
+
+	"\UF72C"  = "pageUp:";											/* page up/down   page up/down to actually move the caret. */
+	"\UF72D"  = "pageDown:";
+
+	"\UF729"   = "moveToBeginningOfLine:";                       	/* Home         			*/
+	"@\UF729"  = "moveToBeginningOfDocument:";                   	/* Cmd  + Home  			*/
+	"$\UF729"  = "moveToBeginningOfLineAndModifySelection:";     	/* Shift + Home 			*/
+	"@$\UF729" = "moveToBeginningOfDocumentAndModifySelection:"; 	/* Shift + Cmd  + Home 		*/
+	"\UF72B"   = "moveToEndOfLine:";                             	/* End          			*/
+	"@\UF72B"  = "moveToEndOfDocument:";                         	/* Cmd  + End  	 			*/
+	"$\UF72B"  = "moveToEndOfLineAndModifySelection:";           	/* Shift + End  			*/
+	"@$\UF72B" = "moveToEndOfDocumentAndModifySelection:";       	/* Shift + Cmd  + End 		*/
+	"\UF72C"   = "pageUp:";                                      	/* PageUp       			*/
+	"\UF72D"   = "pageDown:";                                    	/* PageDown    	 			*/
+	"$\UF728"  = "cut:";                                         	/* Shift + Del  			*/
+	"$\UF727"  = "paste:";                                       	/* Shift + Ins 				*/
+	"@\UF727"  = "copy:";                                        	/* Cmd  + Ins  				*/
+	"$\UF746"  = "paste:";                                       	/* Shift + Help 			*/
+	"@\UF746"  = "copy:";                                        	/* Cmd  + Help (Ins) 		*/
+	"@\UF702"  = "moveWordBackward:";                            	/* Cmd  + LeftArrow 		*/
+	"@\UF703"  = "moveWordForward:";                            	/* Cmd  + RightArrow 		*/
+	"@$\UF702" = "moveWordBackwardAndModifySelection:";   			/* Shift + Cmd + Leftarrow 	*/
+	"@$\UF703" = "moveWordForwardAndModifySelection:";   			/* Shift + Cmd + Rightarrow	*/
+}
+/*	This file remaps the key bindings of a single user on Mac OS X 10.5 to more closely match default behavior on Windows systems.
+This particular mapping assumes that you have also switched the Control and Command keys already.
+This key mapping is more appropriate after switching  Control Key -> Command		Change Command key -> Control   		*/
+
+
+Add indent aware begin/end of line action methods.
+
+The methods going to “begin of indented line” will go to the first non-whitespace character on the line, unless the caret is already there or to the left of this character, in which case it will go to the actual beginning of the line.
+
+The “end of indented line” methods work similarly.
+
+If you want (⇧)⌘⇠/⌘⇢ and ⌘⌫/⌘⌦ to use this behavior, you can add the following to your key bindings file:
+
+"@\UF702"  = "moveToBeginningOfIndentedLine:";
+"$@\UF702" = "moveToBeginningOfIndentedLineAndModifySelection:";
+"@\UF703"  = "moveToEndOfIndentedLine:";
+"$@\UF703" = "moveToEndOfIndentedLineAndModifySelection:";
+"@\U007F"  = "deleteToBeginningOfIndentedLine:";
+"@\UF728"  = "deleteToEndOfIndentedLine:";
+If you create a set of local key bindings then they no longer eclipse the default set. For the records, key bindings are consulted in the following order:
+
+~/Library/Application Support/TextMate/KeyBindings.dict
+/path/to/TextMate.app/Contents/Resources/KeyBindings.dict
+~/Library/KeyBindings/DefaultKeyBinding.dict
+/Library/KeyBindings/DefaultKeyBinding.dict
+/System/Library/Frameworks/AppKit.framework/Resources/StandardKeyBinding.dict
+If you edit any of the above files you will need to relaunch TextMate (⌃⌘Q) before the changes take effect.
+

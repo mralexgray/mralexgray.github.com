@@ -1,0 +1,25 @@
+removed from layouts to see if they were fuckin it up
+
+
+<!--- {% include themes/tlvince/page.html %} -->
+
+<!--- {% include themes/tlvince/homepage.html %} -->
+
+
+<!-- theme : -->
+  <!-- name : tlvince -->
+<!-- {% include JB/setup %} -->
+<!-- {% include themes/tlvince/default.html %} -->
+
+<!--- {% include themes/tlvince/metabox.html %} -->
+
+
+
+from default in the progrm
+
+		<!-- <li class="forkme">
+							<div>
+								<iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=plusjade&repo=jekyll-bootstrap&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px">
+								</iframe>
+							</div>
+						</li> -->
