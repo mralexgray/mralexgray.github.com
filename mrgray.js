@@ -1,3 +1,6 @@
+/*jslint -W033, -W098, -W099, -W116 */
+/*jslint browser: true*/
+/*global $,Meny*/
 // loader
 (function(c,f){ Array.prototype.foreach = function(h){for(var g=0;g<this.length;g++){h(g,this[g])}};
 
