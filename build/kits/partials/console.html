@@ -1,0 +1,57 @@
+<style>
+#console{
+    background:#000;
+    height:300px;
+    width:100%;
+    top:0px;
+    left:0px;
+    position:fixed;
+    z-index:999;
+    display:none;
+    color:#fff;
+    text-align:left;
+}
+#cwin{
+    width:95%;
+    margin:5px auto 5px auto;
+    background:#999;
+    height:240px;
+    padding:8px;
+    color:#000;
+}
+</style>
+<script>
+console.log('this is: ' + this + ' at beginnig of QuakeInit');
+var QuakeConsole = { panel: $('#console'); hidden : 1
+
+
+  hide: function() {  this.panel.slideUp  (function(){ this.hidden = 1; }) }
+  show: function() {  this.panel.slideDown(function(){ this.hidden = 0; }) }
+
+  init: function() {
+  
+/*
+    if (typeof console  != "undefined")
+        console.olog = typeof console.log != 'undefined' ? console.log : function() {}
+
+    console.log = function(m) {
+      console.olog(m)
+      $('#cwin').append('<p>' + message + '</p>');
+    }
+    console.error = console.debug = console.info =  console.log
+*/
+    $('#console').pep({ axis: 'y' }).mouseleave(function(){ this.hide; });
+    $(window).keypress(function(e){
+      if (e.which == 96 || e.which == 126) { console.log(this + this.panel); this.panel.slideToggle();// ? this.show() : this.hide();
+    })
+  }
+}
+</script>
+<div id="console">
+    <div id="cwin"></div>
+    <div class="control-group small">
+            <input type="text" size="60" placeholder="Vageen" class="span3" />
+            <button class="button-active">Send</button>
+    </div>
+  </div>
+</div>
